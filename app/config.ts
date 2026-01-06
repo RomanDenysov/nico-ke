@@ -11,21 +11,6 @@ import presovExterierImage from "@/public/images/nico-presov-ext.jpg";
 
 export const addresses = [
   {
-    street: "17. novembra 106",
-    city: "Prešov",
-    postalCode: "080 01",
-    phone: {
-      label: "+421 905 830 548",
-      href: "tel:+421905830548" as Route,
-    },
-    email: {
-      label: "nicopresov@kavejo.sk",
-      href: "mailto:nicopresov@kavejo.sk" as Route,
-    },
-    image: presovExterierImage,
-    map: "https://maps.app.goo.gl/Xeub9XaS2gmkf3W39" as Route,
-  },
-  {
     street: "Kuzmányho 1",
     city: "Košice",
     postalCode: "040 01",
@@ -39,6 +24,21 @@ export const addresses = [
     },
     image: kosiceExterierImage,
     map: "https://maps.app.goo.gl/pujLGMJrUzqW17XK6" as Route,
+  },
+  {
+    street: "17. novembra 106",
+    city: "Prešov",
+    postalCode: "080 01",
+    phone: {
+      label: "+421 905 830 548",
+      href: "tel:+421905830548" as Route,
+    },
+    email: {
+      label: "nicopresov@kavejo.sk",
+      href: "mailto:nicopresov@kavejo.sk" as Route,
+    },
+    image: presovExterierImage,
+    map: "https://maps.app.goo.gl/Xeub9XaS2gmkf3W39" as Route,
   },
 ];
 
@@ -89,17 +89,17 @@ export const footerSections = {
       {
         label: "Napište nám",
         icon: MailIcon,
-        href: "mailto:nicopresov@kavejo.sk" as Route,
+        href: "mailto:nicokosice@kavejo.sk" as Route,
       },
       {
         label: "Zavolajte nám",
         icon: PhoneIcon,
-        href: "tel:+421905830548",
+        href: "tel:+421917478034",
       },
       {
         label: "Najdite nás",
         icon: MapPinIcon,
-        href: "https://maps.app.goo.gl/VHsNeTAPYMs2ohPD9" as Route,
+        href: "https://maps.app.goo.gl/pujLGMJrUzqW17XK6" as Route,
       },
     ],
   },
@@ -117,14 +117,16 @@ export const footerSections = {
   socials: {
     title: "Sledujte nás",
     items: [
+      //TODO: Update Instagram profile for Košice location
       {
         label: "Instagram",
-        href: "https://www.instagram.com/nico_presov?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" as Route,
+        href: "https://www.instagram.com/nico_kosice?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" as Route,
         icon: Instagram,
       },
+      //TODO: Update Facebook profile for Košice location  
       {
         label: "Facebook",
-        href: "https://www.facebook.com/nicopresov" as Route,
+        href: "https://www.facebook.com/nicokosice" as Route,
         icon: Facebook,
       },
     ],

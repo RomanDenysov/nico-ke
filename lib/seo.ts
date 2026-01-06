@@ -10,7 +10,7 @@ const BASE_URL = env.NEXT_PUBLIC_APP_URL;
 export const siteConfig = {
   name: "NICO CAFFÉ",
   description:
-    "Dlhý brunch, výberová káva, kváskový chlieb a menu, na ktorom ochutnáte zo všetkého trochu - tradičné jedlá v modernom šate, streetfood aj pan asiu. Byť svetoví aj v Prešove, to je heslo, ktorým sa snažíme neustále posúvať vpred.",
+    "Dlhý brunch, výberová káva, kváskový chlieb a menu, na ktorom ochutnáte zo všetkého trochu - tradičné jedlá v modernom šate, streetfood aj pan asiu. Byť svetoví aj v Košiciach, to je heslo, ktorým sa snažíme neustále posúvať vpred.",
   url: BASE_URL,
   locale: "sk_SK",
   type: "website" as const,
@@ -20,17 +20,17 @@ export const siteConfig = {
     height: 630,
   },
   address: {
-    streetAddress: "Hlavná 72",
-    addressLocality: "Prešov",
-    postalCode: "080 01",
+    streetAddress: "Kuzmányho 1",
+    addressLocality: "Košice",
+    postalCode: "040 01",
     addressCountry: "SK",
   },
   geo: {
-    latitude: 48.9983,
-    longitude: 21.2393,
+    latitude: 48.7127,
+    longitude: 21.2476,
   },
-  phone: "+421 948 123 456",
-  openingHours: ["Mo-Fr 07:00-20:00", "Sa 08:00-20:00", "Su 09:00-18:00"],
+  phone: "+421 917 478 034",
+  openingHours: ["Mo-Fr 07:00-22:00", "Sa 09:00-20:00", "Su 09:00-20:00"],
 };
 
 /**
@@ -39,14 +39,14 @@ export const siteConfig = {
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: `${siteConfig.name} | Prešov`,
+    default: `${siteConfig.name} | Košice`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
     "NICO",
     "kaviareň",
-    "Prešov",
+    "Košice",
     "brunch",
     "raňajky",
     "bistro",
@@ -72,20 +72,20 @@ export const defaultMetadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Prešov`,
+    title: `${siteConfig.name} | Košice`,
     description: siteConfig.description,
     images: [
       {
         url: siteConfig.images.og,
         width: siteConfig.images.width,
         height: siteConfig.images.height,
-        alt: `${siteConfig.name} - Kaviareň a bistro v Prešove`,
+        alt: `${siteConfig.name} - Kaviareň a bistro v Košiciach`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Prešov`,
+    title: `${siteConfig.name} | Košice`,
     description: siteConfig.description,
     images: [siteConfig.images.og],
   },
@@ -135,19 +135,19 @@ export function getOrganizationJsonLd() {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         opens: "07:00",
-        closes: "20:00",
+        closes: "22:00",
       },
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: "Saturday",
-        opens: "08:00",
+        opens: "09:00",
         closes: "20:00",
       },
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: "Sunday",
         opens: "09:00",
-        closes: "18:00",
+        closes: "20:00",
       },
     ],
     sameAs: [
@@ -203,7 +203,7 @@ export function getWebPageJsonLd() {
     "@type": "WebPage",
     "@id": `${BASE_URL}/#webpage`,
     url: BASE_URL,
-    name: `${siteConfig.name} | Prešov`,
+    name: `${siteConfig.name} | Košice`,
     description: siteConfig.description,
     isPartOf: {
       "@id": `${BASE_URL}/#website`,

@@ -1,11 +1,11 @@
 {
-  "id": "c9e98f0d-9a63-47ce-ab26-34139a0bea2e",
+  "id": "f935a652-0ddf-4522-a17e-50964b6b0137",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.presov_extras": {
-      "name": "presov_extras",
+    "public.kosice_extras": {
+      "name": "kosice_extras",
       "schema": "",
       "columns": {
         "id": {
@@ -41,8 +41,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.presov_menu_categories": {
-      "name": "presov_menu_categories",
+    "public.kosice_menu_categories": {
+      "name": "kosice_menu_categories",
       "schema": "",
       "columns": {
         "id": {
@@ -84,30 +84,36 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "presov_menu_categories_type_id_presov_menu_types_id_fk": {
-          "name": "presov_menu_categories_type_id_presov_menu_types_id_fk",
-          "tableFrom": "presov_menu_categories",
-          "tableTo": "presov_menu_types",
-          "columnsFrom": ["type_id"],
-          "columnsTo": ["id"],
+        "kosice_menu_categories_type_id_kosice_menu_types_id_fk": {
+          "name": "kosice_menu_categories_type_id_kosice_menu_types_id_fk",
+          "tableFrom": "kosice_menu_categories",
+          "tableTo": "kosice_menu_types",
+          "columnsFrom": [
+            "type_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "presov_menu_categories_slug_unique": {
-          "name": "presov_menu_categories_slug_unique",
+        "kosice_menu_categories_slug_unique": {
+          "name": "kosice_menu_categories_slug_unique",
           "nullsNotDistinct": false,
-          "columns": ["slug"]
+          "columns": [
+            "slug"
+          ]
         }
       },
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.presov_menu_items": {
-      "name": "presov_menu_items",
+    "public.kosice_menu_items": {
+      "name": "kosice_menu_items",
       "schema": "",
       "columns": {
         "id": {
@@ -145,16 +151,27 @@
           "type": "integer",
           "primaryKey": false,
           "notNull": true
+        },
+        "is_combo_menu": {
+          "name": "is_combo_menu",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
         }
       },
       "indexes": {},
       "foreignKeys": {
-        "presov_menu_items_category_id_presov_menu_categories_id_fk": {
-          "name": "presov_menu_items_category_id_presov_menu_categories_id_fk",
-          "tableFrom": "presov_menu_items",
-          "tableTo": "presov_menu_categories",
-          "columnsFrom": ["category_id"],
-          "columnsTo": ["id"],
+        "kosice_menu_items_category_id_kosice_menu_categories_id_fk": {
+          "name": "kosice_menu_items_category_id_kosice_menu_categories_id_fk",
+          "tableFrom": "kosice_menu_items",
+          "tableTo": "kosice_menu_categories",
+          "columnsFrom": [
+            "category_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -165,8 +182,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.presov_menu_types": {
-      "name": "presov_menu_types",
+    "public.kosice_menu_types": {
+      "name": "kosice_menu_types",
       "schema": "",
       "columns": {
         "id": {
@@ -187,6 +204,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "image": {
+          "name": "image",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
         "order": {
           "name": "order",
           "type": "integer",
@@ -198,10 +221,12 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "presov_menu_types_slug_unique": {
-          "name": "presov_menu_types_slug_unique",
+        "kosice_menu_types_slug_unique": {
+          "name": "kosice_menu_types_slug_unique",
           "nullsNotDistinct": false,
-          "columns": ["slug"]
+          "columns": [
+            "slug"
+          ]
         }
       },
       "policies": {},
