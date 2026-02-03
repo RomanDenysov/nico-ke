@@ -58,6 +58,7 @@ export async function createMenuCategoryAction(formData: FormData) {
 
   await createMenuCategory({ ...data, order: maxOrder + 1 });
   updateTag(`menu-type-id-${typeId}`);
+  updateTag("menu-categories");
   refresh();
 }
 
@@ -73,6 +74,7 @@ export async function updateMenuCategoryAction(formData: FormData) {
   const typeId = z.coerce.number().int().positive().parse(data.typeId);
   await updateMenuCategory(id, data);
   updateTag(`menu-type-id-${typeId}`);
+  updateTag("menu-categories");
   refresh();
 }
 
@@ -85,6 +87,7 @@ export async function deleteMenuCategoryAction(formData: FormData) {
   if (typeId) {
     updateTag(`menu-type-id-${typeId}`);
   }
+  updateTag("menu-categories");
   refresh();
 }
 
@@ -96,5 +99,6 @@ export async function reorderMenuCategoriesAction(categoryIds: number[]) {
   if (typeId) {
     updateTag(`menu-type-id-${typeId}`);
   }
+  updateTag("menu-categories");
   refresh();
 }

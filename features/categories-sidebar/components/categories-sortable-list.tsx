@@ -16,7 +16,7 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { usePathname } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { MenuCategory } from "@/db/schema";
 import { reorderMenuCategoriesAction } from "../actions";
 import { CategoriesSortableItem } from "./categories-sortable-item";
@@ -32,6 +32,11 @@ export function CategoriesSortableList({
 }) {
   const pathname = usePathname();
   const [localCategories, setLocalCategories] = useState(categories);
+
+  // Sync local state when server data changes (after create/update/delete)
+  useEffect(() => {
+    setLocalCategories(categories);
+  }, [categories]);
 
   const sensors = useSensors(
     useSensor(PointerSensor),

@@ -1,24 +1,37 @@
 import "server-only";
 
 import { asc, eq } from "drizzle-orm";
+import { cacheLife, cacheTag } from "next/cache";
 import db from "@/db";
 import { menuCategories } from "@/db/schema";
 
-export function getMenuCategories(typeId: number) {
-  return db.query.menuCategories.findMany({
+export async function getMenuCategories(typeId: number) {
+  "use cache";
+  cacheLife("max");
+  cacheTag(`menu-type-id-${typeId}`);
+
+  return await db.query.menuCategories.findMany({
     where: eq(menuCategories.typeId, typeId),
     orderBy: [asc(menuCategories.order)],
   });
 }
 
-export function getMenuCategory(slug: string) {
-  return db.query.menuCategories.findFirst({
+export async function getMenuCategory(slug: string) {
+  "use cache";
+  cacheLife("max");
+  cacheTag("menu-categories");
+
+  return await db.query.menuCategories.findFirst({
     where: eq(menuCategories.slug, slug),
   });
 }
 
-export function getMenuCategoryById(id: number) {
-  return db.query.menuCategories.findFirst({
+export async function getMenuCategoryById(id: number) {
+  "use cache";
+  cacheLife("max");
+  cacheTag("menu-categories");
+
+  return await db.query.menuCategories.findFirst({
     where: eq(menuCategories.id, id),
   });
 }

@@ -114,11 +114,17 @@ function AlertDialogDescription({
 
 function AlertDialogAction({
   className,
+  asChild,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Action>) {
+  if (asChild) {
+    return (
+      <AlertDialogPrimitive.Action asChild className={cn(className)} {...props} />
+    );
+  }
   return (
     <AlertDialogPrimitive.Action asChild className={cn(className)} {...props}>
-      <Button className="rounded-none" {...props} />
+      <Button className="rounded-none" />
     </AlertDialogPrimitive.Action>
   );
 }
