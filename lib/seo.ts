@@ -30,7 +30,7 @@ export const siteConfig = {
     longitude: 21.2476,
   },
   phone: "+421 917 478 034",
-  openingHours: ["Mo-Fr 07:00-22:00", "Sa 09:00-20:00", "Su 09:00-20:00"],
+  openingHours: ["Mo-Fr 08:00-22:00", "Sa 09:00-20:00", "Su 09:00-20:00"],
 };
 
 /**
@@ -134,7 +134,7 @@ export function getOrganizationJsonLd() {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:00",
+        opens: "08:00",
         closes: "22:00",
       },
       {
