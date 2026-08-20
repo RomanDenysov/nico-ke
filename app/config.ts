@@ -44,10 +44,10 @@ export const addresses = [
 
 export const aboutItems = [
   {
-    year: 2013,
-    title: "2013",
+    year: 2019,
+    title: "2019",
     description:
-      "Naše “prudko návykové bistro” vzniklo v roku 2013. Začínali sme v jednej miestnosti s asi desiatimi stolmi a postupne rástli, ako rástol aj počet našich štamgastov.",
+      "V roku 2019 sa v Košiciach otvorila naša druhá pobočka NICO CAFFÉ.",
     image: "/images/about/1.jpg",
   },
   {
@@ -70,15 +70,15 @@ export const aboutItems = [
 export const workingHoursData = {
   week: {
     title: "PON · PIA",
-    hours: "7 · 22",
-    brunch: "7 · 11",
-    bistro: "11 · 20",
+    hours: "8 · 22",
+    brunch: "8 · 11",
+    bistro: "11:30 · 21",
   },
   weekend: {
     title: "SOB · NED",
     hours: "9 · 20",
     brunch: "9 · 12",
-    bistro: "12 · 20",
+    bistro: "12:30 · 19:30",
   },
 };
 
